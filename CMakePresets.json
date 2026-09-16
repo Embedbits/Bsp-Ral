@@ -1,0 +1,154 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32H503xx",
+            "displayName": "STM32H503xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H503xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H503xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H523xx",
+            "displayName": "STM32H523xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H523xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H523xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H533xx",
+            "displayName": "STM32H533xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H533xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H533xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H543xx",
+            "displayName": "STM32H543xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H543xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H543xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H553xx",
+            "displayName": "STM32H553xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H553xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H553xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H562xx",
+            "displayName": "STM32H562xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H562xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H562xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H563xx",
+            "displayName": "STM32H563xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H563xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H563xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H573xx",
+            "displayName": "STM32H573xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H573xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H573xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H5E4xx",
+            "displayName": "STM32H5E4xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H5E4xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H5E4xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H5E5xx",
+            "displayName": "STM32H5E5xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H5E5xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H5E5xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H5F4xx",
+            "displayName": "STM32H5F4xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H5F4xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H5F4xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H5F5xx",
+            "displayName": "STM32H5F5xx (STM32H5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H5_STM32H5F5xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H5F5xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        }
+    ]
+}
