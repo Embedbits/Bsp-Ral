@@ -1,0 +1,166 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32G411xB",
+            "displayName": "STM32G411xB (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G411xB",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G411xB",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G411xC",
+            "displayName": "STM32G411xC (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G411xC",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G411xC",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G414xx",
+            "displayName": "STM32G414xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G414xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G414xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G431xx",
+            "displayName": "STM32G431xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G431xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G431xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G441xx",
+            "displayName": "STM32G441xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G441xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G441xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G471xx",
+            "displayName": "STM32G471xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G471xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G471xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G473xx",
+            "displayName": "STM32G473xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G473xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G473xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G474xx",
+            "displayName": "STM32G474xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G474xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G474xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G483xx",
+            "displayName": "STM32G483xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G483xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G483xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G484xx",
+            "displayName": "STM32G484xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G484xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G484xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G491xx",
+            "displayName": "STM32G491xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G491xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G491xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32G4A1xx",
+            "displayName": "STM32G4A1xx (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32G4A1xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32G4A1xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32GBK1CB",
+            "displayName": "STM32GBK1CB (STM32G4)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32G4_STM32GBK1CB",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32GBK1CB",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        }
+    ]
+}
