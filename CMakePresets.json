@@ -1,0 +1,154 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32U535xx",
+            "displayName": "STM32U535xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U535xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U535xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U545xx",
+            "displayName": "STM32U545xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U545xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U545xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U575xx",
+            "displayName": "STM32U575xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U575xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U575xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U585xx",
+            "displayName": "STM32U585xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U585xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U585xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U595xx",
+            "displayName": "STM32U595xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U595xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U595xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U599xx",
+            "displayName": "STM32U599xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U599xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U599xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5A5xx",
+            "displayName": "STM32U5A5xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5A5xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5A5xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5A9xx",
+            "displayName": "STM32U5A9xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5A9xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5A9xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5F7xx",
+            "displayName": "STM32U5F7xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5F7xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5F7xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5F9xx",
+            "displayName": "STM32U5F9xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5F9xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5F9xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5G7xx",
+            "displayName": "STM32U5G7xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5G7xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5G7xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32U5G9xx",
+            "displayName": "STM32U5G9xx (STM32U5)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32U5_STM32U5G9xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32U5G9xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        }
+    ]
+}
