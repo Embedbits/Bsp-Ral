@@ -1,0 +1,274 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32H723xx",
+            "displayName": "STM32H723xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H723xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H723xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H725xx",
+            "displayName": "STM32H725xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H725xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H725xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H730xx",
+            "displayName": "STM32H730xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H730xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H730xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H730xxQ",
+            "displayName": "STM32H730xxQ (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H730xxQ",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H730xxQ",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H733xx",
+            "displayName": "STM32H733xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H733xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H733xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H735xx",
+            "displayName": "STM32H735xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H735xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H735xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H742xx",
+            "displayName": "STM32H742xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H742xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H742xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H743xx",
+            "displayName": "STM32H743xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H743xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H743xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H745xG",
+            "displayName": "STM32H745xG (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H745xG",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H745xG",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H745xx",
+            "displayName": "STM32H745xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H745xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H745xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H747xG",
+            "displayName": "STM32H747xG (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H747xG",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H747xG",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H747xx",
+            "displayName": "STM32H747xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H747xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H747xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H750xx",
+            "displayName": "STM32H750xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H750xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H750xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H753xx",
+            "displayName": "STM32H753xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H753xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H753xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H755xx",
+            "displayName": "STM32H755xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H755xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H755xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H757xx",
+            "displayName": "STM32H757xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H757xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H757xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7A3xx",
+            "displayName": "STM32H7A3xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7A3xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7A3xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7A3xxQ",
+            "displayName": "STM32H7A3xxQ (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7A3xxQ",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7A3xxQ",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7B0xx",
+            "displayName": "STM32H7B0xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7B0xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7B0xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7B0xxQ",
+            "displayName": "STM32H7B0xxQ (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7B0xxQ",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7B0xxQ",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7B3xx",
+            "displayName": "STM32H7B3xx (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7B3xx",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7B3xx",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        },
+        {
+            "name": "STM32H7B3xxQ",
+            "displayName": "STM32H7B3xxQ (STM32H7)",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/Build_STM32H7_STM32H7B3xxQ",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "TARGET_MCU": "STM32H7B3xxQ",
+                "DOXYGEN_ENABLED": "OFF"
+            }
+        }
+    ]
+}
