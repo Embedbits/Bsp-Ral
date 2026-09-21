@@ -441,6 +441,7 @@ target_include_directories(HAL_LL_Lib
         ${CMAKE_CURRENT_SOURCE_DIR}/CMSIS/CMSIS/DSP/Include  # DSP functionality
         ${CMAKE_CURRENT_SOURCE_DIR}/CMSIS_ST/Include         # ST CMSIS Device files
         ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Inc     # HAL and LL drivers
+        ${CMAKE_BINARY_DIR}                                  # Copied *_hal_conf.h (from *_template.h)
     PRIVATE
 
     INTERFACE
