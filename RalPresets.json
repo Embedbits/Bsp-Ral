@@ -1,0 +1,470 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32U535xB",
+            "hidden": true,
+            "displayName": "STM32U535xB",
+            "description": "STM32U535xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U535xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U535CB",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x455",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U535xC",
+            "hidden": true,
+            "displayName": "STM32U535xC",
+            "description": "STM32U535xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U535xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U535CC",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x455",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U535xE",
+            "hidden": true,
+            "displayName": "STM32U535xE",
+            "description": "STM32U535xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U535xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U535CE",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x455",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U545xE",
+            "hidden": true,
+            "displayName": "STM32U545xE",
+            "description": "STM32U545xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U545xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U545CE",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x455",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U575xG",
+            "hidden": true,
+            "displayName": "STM32U575xG",
+            "description": "STM32U575xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U575xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U575AG",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x482",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U575xI",
+            "hidden": true,
+            "displayName": "STM32U575xI",
+            "description": "STM32U575xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U575xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U575AI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x482",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U585xI",
+            "hidden": true,
+            "displayName": "STM32U585xI",
+            "description": "STM32U585xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U585xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U585AI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x482",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U595xI",
+            "hidden": true,
+            "displayName": "STM32U595xI",
+            "description": "STM32U595xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U595xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U595AI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U595xJ",
+            "hidden": true,
+            "displayName": "STM32U595xJ",
+            "description": "STM32U595xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U595xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U595AJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U599xI",
+            "hidden": true,
+            "displayName": "STM32U599xI",
+            "description": "STM32U599xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U599xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U599NI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U599xJ",
+            "hidden": true,
+            "displayName": "STM32U599xJ",
+            "description": "STM32U599xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U599xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U599BJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5A5xI",
+            "hidden": true,
+            "displayName": "STM32U5A5xI",
+            "description": "STM32U5A5xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5A5xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5A5QI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5A5xJ",
+            "hidden": true,
+            "displayName": "STM32U5A5xJ",
+            "description": "STM32U5A5xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5A5xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5A5AJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5A9xJ",
+            "hidden": true,
+            "displayName": "STM32U5A9xJ",
+            "description": "STM32U5A9xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5A9xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5A9BJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x481",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5F7xI",
+            "hidden": true,
+            "displayName": "STM32U5F7xI",
+            "description": "STM32U5F7xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5F7xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5F7VI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5F7xJ",
+            "hidden": true,
+            "displayName": "STM32U5F7xJ",
+            "description": "STM32U5F7xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5F7xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5F7VJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5F9xI",
+            "hidden": true,
+            "displayName": "STM32U5F9xI",
+            "description": "STM32U5F9xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5F9xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5F9VI",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5F9xJ",
+            "hidden": true,
+            "displayName": "STM32U5F9xJ",
+            "description": "STM32U5F9xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5F9xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5F9BJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5G7xJ",
+            "hidden": true,
+            "displayName": "STM32U5G7xJ",
+            "description": "STM32U5G7xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5G7xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5G7VJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32U5G9xJ",
+            "hidden": true,
+            "displayName": "STM32U5G9xJ",
+            "description": "STM32U5G9xJ (4 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32U5G9xJ"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32U5G9BJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0xE0044000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x476",
+                        "flashSizeAddress": "0x0BFA07A0",
+                        "flashSizeKB": 4096
+                    }
+                }
+            }
+        }
+    ]
+}
