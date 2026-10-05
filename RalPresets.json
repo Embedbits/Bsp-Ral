@@ -1,0 +1,654 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32L412x8",
+            "hidden": true,
+            "displayName": "STM32L412x8",
+            "description": "STM32L412x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L412x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L412C8",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x464",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 64
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L412xB",
+            "hidden": true,
+            "displayName": "STM32L412xB",
+            "description": "STM32L412xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L412xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L412CB",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x464",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L422xB",
+            "hidden": true,
+            "displayName": "STM32L422xB",
+            "description": "STM32L422xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L422xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L422CB",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x464",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L431xB",
+            "hidden": true,
+            "displayName": "STM32L431xB",
+            "description": "STM32L431xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L431xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L431CB",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L431xC",
+            "hidden": true,
+            "displayName": "STM32L431xC",
+            "description": "STM32L431xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L431xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L431CC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L432xB",
+            "hidden": true,
+            "displayName": "STM32L432xB",
+            "description": "STM32L432xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L432xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L432KB",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L432xC",
+            "hidden": true,
+            "displayName": "STM32L432xC",
+            "description": "STM32L432xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L432xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L432KC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L433xB",
+            "hidden": true,
+            "displayName": "STM32L433xB",
+            "description": "STM32L433xB (128 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L433xB"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L433CB",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 128
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L433xC",
+            "hidden": true,
+            "displayName": "STM32L433xC",
+            "description": "STM32L433xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L433xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L433CC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L442xC",
+            "hidden": true,
+            "displayName": "STM32L442xC",
+            "description": "STM32L442xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L442xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L442KC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L443xC",
+            "hidden": true,
+            "displayName": "STM32L443xC",
+            "description": "STM32L443xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L443xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L443CC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x435",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L451xC",
+            "hidden": true,
+            "displayName": "STM32L451xC",
+            "description": "STM32L451xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L451xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L451CC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x462",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L451xE",
+            "hidden": true,
+            "displayName": "STM32L451xE",
+            "description": "STM32L451xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L451xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L451CE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x462",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L452xC",
+            "hidden": true,
+            "displayName": "STM32L452xC",
+            "description": "STM32L452xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L452xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L452CC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x462",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L452xE",
+            "hidden": true,
+            "displayName": "STM32L452xE",
+            "description": "STM32L452xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L452xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L452CE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x462",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L462xE",
+            "hidden": true,
+            "displayName": "STM32L462xE",
+            "description": "STM32L462xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L462xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L462CE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x462",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L471xE",
+            "hidden": true,
+            "displayName": "STM32L471xE",
+            "description": "STM32L471xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L471xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L471QE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L471xG",
+            "hidden": true,
+            "displayName": "STM32L471xG",
+            "description": "STM32L471xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L471xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L471QG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L475xC",
+            "hidden": true,
+            "displayName": "STM32L475xC",
+            "description": "STM32L475xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L475xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L475RC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L475xE",
+            "hidden": true,
+            "displayName": "STM32L475xE",
+            "description": "STM32L475xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L475xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L475RE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L475xG",
+            "hidden": true,
+            "displayName": "STM32L475xG",
+            "description": "STM32L475xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L475xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L475RG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L476xC",
+            "hidden": true,
+            "displayName": "STM32L476xC",
+            "description": "STM32L476xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L476xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L476RC",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L476xE",
+            "hidden": true,
+            "displayName": "STM32L476xE",
+            "description": "STM32L476xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L476xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L476JE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L476xG",
+            "hidden": true,
+            "displayName": "STM32L476xG",
+            "description": "STM32L476xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L476xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L476JG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L486xG",
+            "hidden": true,
+            "displayName": "STM32L486xG",
+            "description": "STM32L486xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L486xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L486JG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x415",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L496xE",
+            "hidden": true,
+            "displayName": "STM32L496xE",
+            "description": "STM32L496xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L496xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L496AE",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x461",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L496xG",
+            "hidden": true,
+            "displayName": "STM32L496xG",
+            "description": "STM32L496xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L496xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L496AG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x461",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32L4A6xG",
+            "hidden": true,
+            "displayName": "STM32L4A6xG",
+            "description": "STM32L4A6xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32L4A6xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32L4A6AG",
+                        "core": "Cortex-M4",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x461",
+                        "flashSizeAddress": "0x1FFF75E0",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        }
+    ]
+}
