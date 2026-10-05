@@ -73,6 +73,7 @@ else()
 endif()
 # Header templates copied into the build directory and renamed (strips "_template")
 set(RAL_CONF_TEMPLATE_FILES
+    stm32_assert_template.h
     stm32h7xx_hal_conf_template.h
 )
 foreach(templateFileName ${RAL_CONF_TEMPLATE_FILES})
@@ -146,7 +147,6 @@ set(HAL_LL_LibSrcs
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_mdma.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_mmc.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_mmc_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_msp_template.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_nand.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_nor.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_opamp.c
@@ -183,9 +183,6 @@ set(HAL_LL_LibSrcs
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_swpmi.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_tim.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_tim_ex.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_timebase_rtc_alarm_template.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_timebase_rtc_wakeup_template.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_timebase_tim_template.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_uart.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_uart_ex.c
     ${CMAKE_CURRENT_SOURCE_DIR}/RAL_ST/Stm32_Drv/Src/stm32h7xx_hal_usart.c
