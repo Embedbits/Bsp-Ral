@@ -1,0 +1,516 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32F722xC",
+            "hidden": true,
+            "displayName": "STM32F722xC",
+            "description": "STM32F722xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F722xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F722IC",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F722xE",
+            "hidden": true,
+            "displayName": "STM32F722xE",
+            "description": "STM32F722xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F722xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F722IE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F723xC",
+            "hidden": true,
+            "displayName": "STM32F723xC",
+            "description": "STM32F723xC (256 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F723xC"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F723IC",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 256
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F723xE",
+            "hidden": true,
+            "displayName": "STM32F723xE",
+            "description": "STM32F723xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F723xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F723IE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F730x8",
+            "hidden": true,
+            "displayName": "STM32F730x8",
+            "description": "STM32F730x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F730x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F730I8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 64
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F732xE",
+            "hidden": true,
+            "displayName": "STM32F732xE",
+            "description": "STM32F732xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F732xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F732IE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F733xE",
+            "hidden": true,
+            "displayName": "STM32F733xE",
+            "description": "STM32F733xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F733xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F733IE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x452",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F745xE",
+            "hidden": true,
+            "displayName": "STM32F745xE",
+            "description": "STM32F745xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F745xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F745IE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F745xG",
+            "hidden": true,
+            "displayName": "STM32F745xG",
+            "description": "STM32F745xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F745xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F745IG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F746xE",
+            "hidden": true,
+            "displayName": "STM32F746xE",
+            "description": "STM32F746xE (512 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F746xE"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F746BE",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 512
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F746xG",
+            "hidden": true,
+            "displayName": "STM32F746xG",
+            "description": "STM32F746xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F746xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F746BG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F750x8",
+            "hidden": true,
+            "displayName": "STM32F750x8",
+            "description": "STM32F750x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F750x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F750N8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 64
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F756xG",
+            "hidden": true,
+            "displayName": "STM32F756xG",
+            "description": "STM32F756xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F756xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F756BG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x449",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F765xG",
+            "hidden": true,
+            "displayName": "STM32F765xG",
+            "description": "STM32F765xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F765xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F765BG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F765xI",
+            "hidden": true,
+            "displayName": "STM32F765xI",
+            "description": "STM32F765xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F765xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F765BI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F767xG",
+            "hidden": true,
+            "displayName": "STM32F767xG",
+            "description": "STM32F767xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F767xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F767BG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F767xI",
+            "hidden": true,
+            "displayName": "STM32F767xI",
+            "description": "STM32F767xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F767xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F767BI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F769xG",
+            "hidden": true,
+            "displayName": "STM32F769xG",
+            "description": "STM32F769xG (1 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F769xG"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F769BG",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 1024
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F769xI",
+            "hidden": true,
+            "displayName": "STM32F769xI",
+            "description": "STM32F769xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F769xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F769AI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F777xI",
+            "hidden": true,
+            "displayName": "STM32F777xI",
+            "description": "STM32F777xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F777xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F777BI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F778xI",
+            "hidden": true,
+            "displayName": "STM32F778xI",
+            "description": "STM32F778xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F778xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F778AI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF07A22",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32F779xI",
+            "hidden": true,
+            "displayName": "STM32F779xI",
+            "description": "STM32F779xI (2 MB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32F779xI"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32F779AI",
+                        "core": "Cortex-M7",
+                        "idAddress": "0xE0042000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x451",
+                        "flashSizeAddress": "0x1FF0F442",
+                        "flashSizeKB": 2048
+                    }
+                }
+            }
+        }
+    ]
+}
