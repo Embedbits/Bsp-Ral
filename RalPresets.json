@@ -1,0 +1,94 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "STM32H7R3x8",
+            "hidden": true,
+            "displayName": "STM32H7R3x8",
+            "description": "STM32H7R3x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32H7R3x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H7R3A8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0x5C001000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x485"
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32H7R7x8",
+            "hidden": true,
+            "displayName": "STM32H7R7x8",
+            "description": "STM32H7R7x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32H7R7x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H7R7A8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0x5C001000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x485"
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32H7S3x8",
+            "hidden": true,
+            "displayName": "STM32H7S3x8",
+            "description": "STM32H7S3x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32H7S3x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H7S3A8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0x5C001000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x485"
+                    }
+                }
+            }
+        },
+        {
+            "name": "STM32H7S7x8",
+            "hidden": true,
+            "displayName": "STM32H7S7x8",
+            "description": "STM32H7S7x8 (64 KB Flash)",
+            "cacheVariables": {
+                "TARGET_MCU": "STM32H7S7x8"
+            },
+            "vendor": {
+                "embedbits.com/EmBi": {
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H7S7A8",
+                        "core": "Cortex-M7",
+                        "idAddress": "0x5C001000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x485"
+                    }
+                }
+            }
+        }
+    ]
+}

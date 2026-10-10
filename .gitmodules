@@ -1,0 +1,9 @@
+[submodule "CMSIS"]
+	path = CMSIS
+	url = https://github.com/Embedbits/Bsp-Ral-CMSIS.git
+[submodule "CMSIS_ST"]
+	path = CMSIS_ST
+	url = https://github.com/Embedbits/Bsp-Ral-CMSIS_ST.git
+[submodule "RAL_ST"]
+	path = RAL_ST
+	url = https://github.com/Embedbits/Bsp-Ral-RAL_ST.git
