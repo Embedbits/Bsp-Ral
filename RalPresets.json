@@ -467,29 +467,6 @@
             }
         },
         {
-            "name": "STM32F778xI",
-            "hidden": true,
-            "displayName": "STM32F778xI",
-            "description": "STM32F778xI (2 MB Flash)",
-            "cacheVariables": {
-                "TARGET_MCU": "STM32F778xI"
-            },
-            "vendor": {
-                "embedbits.com/EmBi": {
-                    "target": "mcu",
-                    "identification": {
-                        "device": "STM32F778AI",
-                        "core": "Cortex-M7",
-                        "idAddress": "0xE0042000",
-                        "idMask": "0x00000FFF",
-                        "idValue": "0x451",
-                        "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 2048
-                    }
-                }
-            }
-        },
-        {
             "name": "STM32F779xI",
             "hidden": true,
             "displayName": "STM32F779xI",
