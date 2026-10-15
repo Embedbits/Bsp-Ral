@@ -7,3 +7,6 @@
 [submodule "RAL_ST"]
 	path = RAL_ST
 	url = https://github.com/Embedbits/Bsp-Ral-RAL_ST.git
+[submodule "Svd"]
+	path = Svd
+	url = https://github.com/Embedbits/Bsp-Ral-Svd.git
