@@ -265,7 +265,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5E4AJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 4096
+                    }
                 }
             }
         },
@@ -279,7 +288,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5E4AK",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 3072
+                    }
                 }
             }
         },
@@ -293,7 +311,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5E5IJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 4096
+                    }
                 }
             }
         },
@@ -307,7 +334,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5E5IK",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 3072
+                    }
                 }
             }
         },
@@ -321,7 +357,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5F4AJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 4096
+                    }
                 }
             }
         },
@@ -335,7 +380,16 @@
             },
             "vendor": {
                 "embedbits.com/EmBi": {
-                    "target": "mcu"
+                    "target": "mcu",
+                    "identification": {
+                        "device": "STM32H5F5IJ",
+                        "core": "Cortex-M33",
+                        "idAddress": "0x44024000",
+                        "idMask": "0x00000FFF",
+                        "idValue": "0x47A",
+                        "flashSizeAddress": "0x08FFF80C",
+                        "flashSizeKB": 4096
+                    }
                 }
             }
         }
