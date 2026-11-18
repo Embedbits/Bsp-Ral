@@ -5,6 +5,954 @@
         "minor": 25,
         "patch": 0
     },
+    "vendor": {
+        "embedbits.com/EmBi": {
+            "optionBytes": {
+                "0x483": {
+                    "procedure": {
+                        "optionKeyRegister": "0x52002008",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x52002018",
+                        "statusRegister": "0x5200201C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00000001"
+                    },
+                    "device": "STM32H72x/STM32H73x",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "reset level is set to 0.0 V" }, { "value": "0x1", "text": "reset level is set to 2.1 V" }, { "value": "0x2", "text": "reset level is set to 2.4 V" }, { "value": "0x3", "text": "reset level is set to 2.7 V" } ]
+                        },
+                        {
+                            "name": "IWDG1_SW",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is controlled by hardware" }, { "value": "0x1", "text": "Independent watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STOP mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STOP mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "NRST_STBY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STANDBY mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STANDBY mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "IO_HSLV",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 29,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "Product operating below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "FZ_IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STOP mode" }, { "value": "0x1", "text": "Independent watchdog is running in STOP mode" } ]
+                        },
+                        {
+                            "name": "FZ_IWDG_SDBY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STANDBY mode" }, { "value": "0x1", "text": "Independent watchdog is running in STANDBY mode" } ]
+                        },
+                        {
+                            "name": "SECURITY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x0" ],
+                            "values": [ { "value": "0x0", "text": "Security feature disabled" }, { "value": "0x1", "text": "Security feature enabled" } ]
+                        },
+                        {
+                            "name": "SWAP_BANK_OPT",
+                            "category": "User Configuration",
+                            "read": "0x52002020",
+                            "program": "0x52002020",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0x1" ],
+                            "values": [ { "value": "0x0", "text": "after boot loading, no swap for user sectors" }, { "value": "0x1", "text": "after boot loading, user sectors swapped" } ]
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "PROT_AREA_START",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank PCROP start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 0,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PROT_AREA_END",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank PCROP End address (excluded). Deactivation of PCROP can be done by enbaling DMEP bit and changing RDP from level 1 to level 0 while putting end address greater than start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 16,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMEP",
+                            "category": "PCROP Protection",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Flash Bank PCROP zone is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank PCROP zone is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "ST_RAM_SIZE",
+                            "category": "Secure Protection",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 19,
+                            "width": 2,
+                            "configs": [ "0x0" ],
+                            "values": [ { "value": "0x0", "text": "2 KB reserved to ST code" }, { "value": "0x1", "text": "4 KB reserved to ST code" }, { "value": "0x2", "text": "8 KB reserved to ST code" }, { "value": "0x3", "text": "16 KB reserved to ST code" } ]
+                        },
+                        {
+                            "name": "SEC_AREA_START",
+                            "category": "Secure Protection",
+                            "description": "Flash secure area start address",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SEC_AREA_END",
+                            "category": "Secure Protection",
+                            "description": "Flash secure area end address. If this address is equal to SEC_AREA_START, the whole flash memory is secure protected.If this address is lower than SEC_AREA_START, no protection is set on flash memory.",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMES",
+                            "category": "Secure Protection",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0" ],
+                            "values": [ { "value": "0x0", "text": "Flash secure area is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash secure area is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x52002038",
+                            "program": "0x5200203C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x1" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active" }, { "value": "0x1", "text": "Write protection not active" } ]
+                        },
+                        {
+                            "name": "TCM_AXI_SHARED",
+                            "category": "TCM_AXI Shared Configuration",
+                            "read": "0x52002070",
+                            "program": "0x52002074",
+                            "offset": 0,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "64KB ITCM : 320KB system AXI" }, { "value": "0x1", "text": "128KB ITCM : 256KB system AXI" }, { "value": "0x2", "text": "192KB ITCM : 192KB system AXI" }, { "value": "0x3", "text": "256KB ITCM : 128KB system AXI" } ]
+                        },
+                        {
+                            "name": "CPU_FREQ_BOOST",
+                            "category": "TCM_AXI Shared Configuration",
+                            "read": "0x52002070",
+                            "program": "0x52002074",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Feature disabled" }, { "value": "0x1", "text": "CPU can operate at a boosted Fmax frequency (no more ECC on I/DTCM)" } ]
+                        }
+                    ]
+                },
+                "0x450": {
+                    "procedure": {
+                        "optionKeyRegister": "0x52002008",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x52002018",
+                        "statusRegister": "0x5200201C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00000001"
+                    },
+                    "device": "STM32H7xx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" }
+                            ] },
+                        { "number": "0x2", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" },
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x0" }
+                            ] },
+                        { "number": "0x3", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" },
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x0" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" },
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x80" }
+                            ] },
+                        { "number": "0x5", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" },
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x80" }
+                            ] },
+                        { "number": "0x6", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" },
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x80" }
+                            ] },
+                        { "number": "0x7", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF1E880", "mask": "0x80", "value": "0x80" },
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits reflects the power level that generates a system reset. Refer to device datasheet for the values of VBORx VDD reset thresholds.",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "reset level is set to VBOR0" }, { "value": "0x1", "text": "reset level is set to VBOR1" }, { "value": "0x2", "text": "reset level is set to VBOR2" }, { "value": "0x3", "text": "reset level is set to VBOR3" } ]
+                        },
+                        {
+                            "name": "IWDG1_SW",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is controlled by hardware" }, { "value": "0x1", "text": "Independent watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "IWDG2_SW",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 5,
+                            "width": 1,
+                            "configs": [ "0x0", "0x1", "0x4", "0x5" ],
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is controlled by hardware" }, { "value": "0x1", "text": "Independent watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP_D1",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STOP mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STOP mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "NRST_STBY_D1",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STANDBY mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STANDBY mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "FZ_IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STOP mode" }, { "value": "0x1", "text": "Independent watchdog is running in STOP mode" } ]
+                        },
+                        {
+                            "name": "FZ_IWDG_SDBY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STANDBY mode" }, { "value": "0x1", "text": "Independent watchdog is running in STANDBY mode" } ]
+                        },
+                        {
+                            "name": "SECURITY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x0", "0x2", "0x4", "0x6" ],
+                            "values": [ { "value": "0x0", "text": "Security feature disabled" }, { "value": "0x1", "text": "Security feature enabled" } ]
+                        },
+                        {
+                            "name": "IO_HSLV",
+                            "category": "User Configuration",
+                            "description": "I/O high-speed at low-voltage configuration bit. This bit indicates that the product operates below 2.5 V",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 29,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "Product operating below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "BCM4",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 22,
+                            "width": 1,
+                            "configs": [ "0x0", "0x1", "0x4", "0x5" ],
+                            "values": [ { "value": "0x0", "text": "CM4 boot disabled" }, { "value": "0x1", "text": "CM4 boot enabled" } ]
+                        },
+                        {
+                            "name": "BCM7",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "CM7 boot disabled" }, { "value": "0x1", "text": "CM7 boot enabled" } ]
+                        },
+                        {
+                            "name": "NRST_STOP_D2",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STOP mode on Domain 2 is entering with reset" }, { "value": "0x1", "text": "STOP mode on Domain 2 is entering without reset" } ]
+                        },
+                        {
+                            "name": "NRST_STBY_D2",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STANDBY mode on Domain 2 is entering with reset" }, { "value": "0x1", "text": "STANDBY mode on Domain 2 is entering without reset" } ]
+                        },
+                        {
+                            "name": "SWAP_BANK",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "values": [ { "value": "0x0", "text": "after boot loading, no swap for user sectors" }, { "value": "0x1", "text": "after boot loading, user sectors swapped" } ]
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_CM4_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002048",
+                            "program": "0x5200204C",
+                            "offset": 0,
+                            "width": 16,
+                            "configs": [ "0x0", "0x1", "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_CM4_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002048",
+                            "program": "0x5200204C",
+                            "offset": 16,
+                            "width": 16,
+                            "configs": [ "0x0", "0x1", "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "PROT_AREA_START1",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 0,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PROT_AREA_END1",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP End address (excluded). Deactivation of PCROP can be done by enbaling DMEP1 bit and changing RDP from level 1 to level 0 while putting end address greater than start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 16,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMEP1",
+                            "category": "PCROP Protection",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Flash Bank 1 PCROP zone is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 1 PCROP zone is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "PROT_AREA_START2",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PROT_AREA_END2",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 2 PCROP End address (excluded). Deactivation of PCROP can be done by enbaling DMEP2 bit and changing RDP from level 1 to level 0 while putting end address greater than start address",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x81000FF" }
+                        },
+                        {
+                            "name": "DMEP2",
+                            "category": "PCROP Protection",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "values": [ { "value": "0x0", "text": "Flash Bank 2 PCROP zone is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 2 PCROP zone is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "SEC_AREA_START1",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 1 secure area start address",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0", "0x2", "0x4", "0x6" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SEC_AREA_END1",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 1 secure area end address. If this address is equal to SEC_AREA_START1, the whole bank 1 is secure protected.If this address is lower than SEC_AREA_START1, no protection is set on bank 1.",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0x2", "0x4", "0x6" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMES1",
+                            "category": "Secure Protection",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0x2", "0x4", "0x6" ],
+                            "values": [ { "value": "0x0", "text": "Flash Bank 1 secure area is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 1 secure area is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "SEC_AREA_START2",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 2 secure area start address",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0", "0x2" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "SEC_AREA_END2",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 2 secure area end address. If this address is equal to SEC_AREA_START2, the whole bank 2 is secure protected.If this address is lower than SEC_AREA_START2, no protection is set on bank 2.",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0x2" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x81000FF" }
+                        },
+                        {
+                            "name": "DMES2",
+                            "category": "Secure Protection",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0x2" ],
+                            "values": [ { "value": "0x0", "text": "Flash Bank 2 secure area is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 2 secure area is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "ST_RAM_SIZE",
+                            "category": "DTCM RAM Protection",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 19,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "2 KB" }, { "value": "0x1", "text": "4 KB" }, { "value": "0x2", "text": "8 KB" }, { "value": "0x3", "text": "16 KB" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x52002038",
+                            "program": "0x5200203C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x52002038",
+                            "program": "0x5200203C",
+                            "offset": 0,
+                            "width": 1,
+                            "configs": [ "0x4", "0x5", "0x6", "0x7" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "nWRP8",
+                            "category": "Write Protection",
+                            "read": "0x52002138",
+                            "program": "0x5200213C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x1", "0x2", "0x3" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        }
+                    ]
+                },
+                "0x480": {
+                    "procedure": {
+                        "optionKeyRegister": "0x52002008",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x52002018",
+                        "statusRegister": "0x5200201C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00000001"
+                    },
+                    "device": "STM32H7A/B",
+                    "configs": [
+                        { "number": "0xA", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" },
+                                { "kind": "SecurityEx", "read": "0x8FFF80C", "mask": "0xFFF", "value": "0x400" }
+                            ] },
+                        { "number": "0xB", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" },
+                                { "kind": "SecurityEx", "read": "0x8FFF80C", "mask": "0xFFF", "value": "0x400" }
+                            ] },
+                        { "number": "0x0", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "reset level OFF" }, { "value": "0x1", "text": "reset level is set to 2.1 V" }, { "value": "0x2", "text": "reset level is set to 2.4 V" }, { "value": "0x3", "text": "reset level is set to 2.7 V" } ]
+                        },
+                        {
+                            "name": "IWDG1_SW",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is controlled by hardware" }, { "value": "0x1", "text": "Independent watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STOP mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STOP mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "NRST_STBY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "STANDBY mode on Domain 1 is entering with reset" }, { "value": "0x1", "text": "STANDBY mode on Domain 1 is entering without reset" } ]
+                        },
+                        {
+                            "name": "VDDMMC_HSLV",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDDMMC power rail operating below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "IWDG_FZ_STOP",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STOP mode" }, { "value": "0x1", "text": "Independent watchdog is running in STOP mode" } ]
+                        },
+                        {
+                            "name": "IWDG_FZ_SDBY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog is freezed in STANDBY mode" }, { "value": "0x1", "text": "Independent watchdog is running in STANDBY mode" } ]
+                        },
+                        {
+                            "name": "SECURITY",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x0", "0xA" ],
+                            "values": [ { "value": "0x0", "text": "Security feature disabled" }, { "value": "0x1", "text": "Security feature enabled" } ]
+                        },
+                        {
+                            "name": "VDDIO_HSLV",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 29,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range,I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDD I/O below 2.5 V,I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "SWAP_BANK_OPT",
+                            "category": "User Configuration",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "after boot loading, no swap for user sectors" }, { "value": "0x1", "text": "after boot loading, user sectors swapped" } ]
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_CM7_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "read": "0x52002040",
+                            "program": "0x52002044",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x10000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "PROT_AREA_START1",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 0,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PROT_AREA_END1",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP End address (excluded). Deactivation of PCROP can be done by enbaling DMEP1 bit and changing RDP from level 1 to level 0 while putting end address greater than start address",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 16,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMEP1",
+                            "category": "PCROP Protection",
+                            "read": "0x52002028",
+                            "program": "0x5200202C",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Flash Bank 1 PCROP zone is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 1 PCROP zone is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "PROT_AREA_START2",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 0,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PROT_AREA_END2",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 2 PCROP End address (excluded). Deactivation of PCROP can be done by enbaling DMEP2 bit and changing RDP from level 1 to level 0 while putting end address greater than start address",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 16,
+                            "width": 12,
+                            "equation": { "multiplier": "0x100", "offset": "0x81000FF" }
+                        },
+                        {
+                            "name": "DMEP2",
+                            "category": "PCROP Protection",
+                            "read": "0x52002128",
+                            "program": "0x5200212C",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Flash Bank 2 PCROP zone is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 2 PCROP zone is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "SEC_AREA_START1",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 1 secure area start address",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SEC_AREA_END1",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 1 secure area end address. If this address is equal to SEC_AREA_START1, the whole bank 1 is secure protected.If this address is lower than SEC_AREA_START1, no protection is set on bank 1.",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x80000FF" }
+                        },
+                        {
+                            "name": "DMES1",
+                            "category": "Secure Protection",
+                            "read": "0x52002030",
+                            "program": "0x52002034",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0xA" ],
+                            "values": [ { "value": "0x0", "text": "Flash Bank 1 secure area is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 1 secure area is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "SEC_AREA_START2",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 2 secure area start address",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 0,
+                            "width": 12,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "SEC_AREA_END2",
+                            "category": "Secure Protection",
+                            "description": "Flash Bank 2 secure area end address. If this address is equal to SEC_AREA_START2, the whole bank 2 is secure protected.If this address is lower than SEC_AREA_START2, no protection is set on bank 2.",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x100", "offset": "0x81000FF" }
+                        },
+                        {
+                            "name": "DMES2",
+                            "category": "Secure Protection",
+                            "read": "0x52002130",
+                            "program": "0x52002134",
+                            "offset": 31,
+                            "width": 1,
+                            "configs": [ "0x0", "0xA" ],
+                            "values": [ { "value": "0x0", "text": "Flash Bank 2 secure area is kept when RDP level regression (change from level 1 to 0) occurs" }, { "value": "0x1", "text": "Flash Bank 2 secure area is erased when RDP level regression (change from level 1 to 0) occurs" } ]
+                        },
+                        {
+                            "name": "ST_RAM_SIZE",
+                            "category": "DTCM RAM Protection",
+                            "read": "0x5200201C",
+                            "program": "0x52002020",
+                            "offset": 19,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "2 KB" }, { "value": "0x1", "text": "4 KB" }, { "value": "0x2", "text": "8 KB" }, { "value": "0x3", "text": "16 KB" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x52002038",
+                            "program": "0x5200203C",
+                            "offset": 0,
+                            "width": 32,
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active" }, { "value": "0x1", "text": "Write protection not active" } ]
+                        },
+                        {
+                            "name": "nWRP32",
+                            "category": "Write Protection",
+                            "read": "0x52002138",
+                            "program": "0x5200213C",
+                            "offset": 0,
+                            "width": 32,
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active" }, { "value": "0x1", "text": "Write protection not active" } ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "configurePresets": [
         {
             "name": "STM32H723xE",
@@ -185,7 +1133,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3" ]
                     }
                 }
             }
@@ -208,7 +1157,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x2", "0x3" ]
                     }
                 }
             }
@@ -231,7 +1181,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3" ]
                     }
                 }
             }
@@ -254,7 +1205,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x2", "0x3" ]
                     }
                 }
             }
@@ -263,7 +1215,7 @@
             "name": "STM32H745xG",
             "hidden": true,
             "displayName": "STM32H745xG",
-            "description": "STM32H745xG (512 KB Flash)",
+            "description": "STM32H745xG (1 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H745xG"
             },
@@ -273,11 +1225,16 @@
                     "identification": {
                         "device": "STM32H745BG",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -286,7 +1243,7 @@
             "name": "STM32H745xI",
             "hidden": true,
             "displayName": "STM32H745xI",
-            "description": "STM32H745xI (1 MB Flash)",
+            "description": "STM32H745xI (2 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H745xI"
             },
@@ -296,11 +1253,16 @@
                     "identification": {
                         "device": "STM32H745BI",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -309,7 +1271,7 @@
             "name": "STM32H747xG",
             "hidden": true,
             "displayName": "STM32H747xG",
-            "description": "STM32H747xG (512 KB Flash)",
+            "description": "STM32H747xG (1 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H747xG"
             },
@@ -319,11 +1281,16 @@
                     "identification": {
                         "device": "STM32H747AG",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -332,7 +1299,7 @@
             "name": "STM32H747xI",
             "hidden": true,
             "displayName": "STM32H747xI",
-            "description": "STM32H747xI (1 MB Flash)",
+            "description": "STM32H747xI (2 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H747xI"
             },
@@ -342,11 +1309,16 @@
                     "identification": {
                         "device": "STM32H747AI",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -369,7 +1341,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 128
+                        "flashSizeKB": 128,
+                        "optionByteConfigs": [ "0x6", "0x7" ]
                     }
                 }
             }
@@ -392,7 +1365,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x2", "0x3" ]
                     }
                 }
             }
@@ -401,7 +1375,7 @@
             "name": "STM32H755xI",
             "hidden": true,
             "displayName": "STM32H755xI",
-            "description": "STM32H755xI (1 MB Flash)",
+            "description": "STM32H755xI (2 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H755xI"
             },
@@ -411,11 +1385,16 @@
                     "identification": {
                         "device": "STM32H755BI",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -424,7 +1403,7 @@
             "name": "STM32H757xI",
             "hidden": true,
             "displayName": "STM32H757xI",
-            "description": "STM32H757xI (1 MB Flash)",
+            "description": "STM32H757xI (2 MB Flash)",
             "cacheVariables": {
                 "TARGET_MCU": "STM32H757xI"
             },
@@ -434,11 +1413,16 @@
                     "identification": {
                         "device": "STM32H757AI",
                         "core": "Cortex-M7",
+                        "cores": [
+                            { "name": "CM7", "core": "Cortex-M7" },
+                            { "name": "CM4", "core": "Cortex-M4" }
+                        ],
                         "idAddress": "0x5C001000",
                         "idMask": "0x00000FFF",
                         "idValue": "0x450",
                         "flashSizeAddress": "0x1FF1E880",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -461,7 +1445,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x480",
                         "flashSizeAddress": "0x08FFF80C",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -484,7 +1469,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x480",
                         "flashSizeAddress": "0x08FFF80C",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -507,7 +1493,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x480",
                         "flashSizeAddress": "0x08FFF80C",
-                        "flashSizeKB": 128
+                        "flashSizeKB": 128,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
@@ -530,7 +1517,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x480",
                         "flashSizeAddress": "0x08FFF80C",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1" ]
                     }
                 }
             }
