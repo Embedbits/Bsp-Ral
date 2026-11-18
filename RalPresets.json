@@ -5,6 +5,1429 @@
         "minor": 25,
         "patch": 0
     },
+    "vendor": {
+        "embedbits.com/EmBi": {
+            "optionBytes": {
+                "0x474": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x4002201C",
+                        "statusRegister": "0x40022020",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00000001"
+                    },
+                    "device": "STM32H50x",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xC3000000" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xB4000000" }
+                            ] },
+                        { "number": "0x4", "checks": [ ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "PRODUCT_STATE",
+                            "category": "Product state",
+                            "description": "Life state code.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xED", "text": "Open" }, { "value": "0x17", "text": "Provisioning" }, { "value": "0x2E", "text": "Provisioned" }, { "value": "0x72", "text": "Closed" }, { "value": "0x5C", "text": "Locked" }, { "value": "0x9A", "text": "Regression" } ]
+                        },
+                        {
+                            "name": "BORH_EN",
+                            "category": "BOR Level",
+                            "description": "Brownout high enable configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "disabled" }, { "value": "0x1", "text": "enabled" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "Brownout level option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 0,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x1", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x2", "text": "BOR Level 2, the threshold level is medium (around 2.4 V)" }, { "value": "0x3", "text": "BOR Level 3, the threshold level is high (around 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IO_VDDIO2_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDDIO2 voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.7 V)" }, { "value": "0x1", "text": "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IO_VDD_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDD voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.7 V)" }, { "value": "0x1", "text": "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "description": "Standby mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 21,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system standby mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system standby mode." } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "description": "Stop mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system Stop mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system Stop mode." } ]
+                        },
+                        {
+                            "name": "SWAP_BANK",
+                            "category": "User Configuration",
+                            "description": "Bank swapping option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "bank 1 and bank 2 not swapped" }, { "value": "0x1", "text": "bank 1 and bank 2 swapped" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "description": "IWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "IWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "IWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "description": "WWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "WWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "WWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "description": "Core domain Stop entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Stop mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Stop mode on core domain" } ]
+                        },
+                        {
+                            "name": "NRST_STDBY",
+                            "category": "User Configuration",
+                            "description": "Core domain Standby entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Standby mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Standby mode on core domain" } ]
+                        },
+                        {
+                            "name": "SRAM1_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM1 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 10,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 ECC check enabled" }, { "value": "0x1", "text": "SRAM1 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM1_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM1 erase upon system reset",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 9,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM1 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "SRAM2_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM2 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 ECC check enabled" }, { "value": "0x1", "text": "SRAM2 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "BKPRAM_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in BKPRAM region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BKPRAM ECC check enabled" }, { "value": "0x1", "text": "BKPRAM ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM2 erase when system reset",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erase when system reset occurs" }, { "value": "0x1", "text": "SRAM2 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "NSBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Unique Boot Entry Address",
+                            "read": "0x40022080",
+                            "program": "0x40022084",
+                            "offset": 8,
+                            "width": 24,
+                            "equation": { "multiplier": "0x100", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NSBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of SWAP_BANK, and NSBOOTADD settings.",
+                            "read": "0x40022080",
+                            "program": "0x40022084",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The NSBOOTADD and SWAP_BANK are frozen." } ]
+                        },
+                        {
+                            "name": "WRPSGn1",
+                            "category": "Write sector group protection 1",
+                            "description": "Bank 1 sector group protection option status byte",
+                            "read": "0x400220E8",
+                            "program": "0x400220EC",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn2",
+                            "category": "Write sector group protection 2",
+                            "description": "Bank 2 sector group protection option status byte",
+                            "read": "0x400221E8",
+                            "program": "0x400221EC",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8010000" }
+                        },
+                        {
+                            "name": "LOCKBL",
+                            "category": "OTP write protection",
+                            "description": "OTP Block Lock",
+                            "read": "0x40022090",
+                            "program": "0x40022094",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_STRT",
+                            "category": "Flash HDP bank 1",
+                            "description": "Bank 1 HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x400220FC",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_END",
+                            "category": "Flash HDP bank 1",
+                            "description": "Bank 1 HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x400220FC",
+                            "offset": 16,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_STRT",
+                            "category": "Flash HDP bank 2",
+                            "description": "Bank 2 HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x400221FC",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_END",
+                            "category": "Flash HDP bank 2",
+                            "description": "Bank 2 HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x400221FC",
+                            "offset": 16,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "PRODUCT_STATE",
+                            "category": "Product state",
+                            "description": "Life state code.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xED", "text": "Open" }, { "value": "0x17", "text": "Provisioning" }, { "value": "0x2E", "text": "Provisioned" }, { "value": "0x72", "text": "Closed" }, { "value": "0x5C", "text": "Locked" }, { "value": "0x9A", "text": "Regression" } ]
+                        },
+                        {
+                            "name": "BORH_EN",
+                            "category": "BOR Level",
+                            "description": "Brownout high enable configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "disabled" }, { "value": "0x1", "text": "enabled" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "Brownout level option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 0,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x1", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x2", "text": "BOR Level 2, the threshold level is medium (around 2.4 V)" }, { "value": "0x3", "text": "BOR Level 3, the threshold level is high (around 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IO_VDDIO2_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDDIO2 voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.7 V)" }, { "value": "0x1", "text": "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IO_VDD_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDD voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.7 V)" }, { "value": "0x1", "text": "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "description": "Stop mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system Stop mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system Stop mode." } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "description": "Standby mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 21,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system standby mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system standby mode." } ]
+                        },
+                        {
+                            "name": "SWAP_BANK",
+                            "category": "User Configuration",
+                            "description": "Bank swapping option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "bank 1 and bank 2 not swapped" }, { "value": "0x1", "text": "bank 1 and bank 2 swapped" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "description": "IWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "IWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "IWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "description": "WWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "WWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "WWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "description": "Core domain Stop entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Stop mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Stop mode on core domain" } ]
+                        },
+                        {
+                            "name": "NRST_STDBY",
+                            "category": "User Configuration",
+                            "description": "Core domain Standby entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Standby mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Standby mode on core domain" } ]
+                        },
+                        {
+                            "name": "SRAM1_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM1 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 10,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 ECC check enabled" }, { "value": "0x1", "text": "SRAM1 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM1_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM1 erase upon system reset",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 9,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM1 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "SRAM2_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM2 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 ECC check enabled" }, { "value": "0x1", "text": "SRAM2 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "BKPRAM_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in BKPRAM region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BKPRAM ECC check enabled" }, { "value": "0x1", "text": "BKPRAM ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM2 erase when system reset",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erase when system reset occurs" }, { "value": "0x1", "text": "SRAM2 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "NSBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Unique Boot Entry Address",
+                            "read": "0x40022080",
+                            "program": "0x50022084",
+                            "offset": 8,
+                            "width": 24,
+                            "equation": { "multiplier": "0x100", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NSBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of SWAP_BANK, and NSBOOTADD settings.",
+                            "read": "0x40022080",
+                            "program": "0x50022084",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The NSBOOTADD and SWAP_BANK are frozen." } ]
+                        },
+                        {
+                            "name": "WRPSGn1",
+                            "category": "Write sector group protection 1",
+                            "description": "Bank 1 sector group protection option status byte",
+                            "read": "0x400220E8",
+                            "program": "0x500220EC",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn2",
+                            "category": "Write sector group protection 2",
+                            "description": "Bank 2 sector group protection option status byte",
+                            "read": "0x400221E8",
+                            "program": "0x500221EC",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "LOCKBL",
+                            "category": "OTP write protection",
+                            "description": "OTP Block Lock",
+                            "read": "0x40022090",
+                            "program": "0x50022094",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_STRT",
+                            "category": "Flash HDP bank 1",
+                            "description": "Bank 1 HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x500220FC",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_END",
+                            "category": "Flash HDP bank 1",
+                            "description": "Bank 1 HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x500220FC",
+                            "offset": 16,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_STRT",
+                            "category": "Flash HDP bank 2",
+                            "description": "Bank 2 HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x500221FC",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_END",
+                            "category": "Flash HDP bank 2",
+                            "description": "Bank 2 HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x500221FC",
+                            "offset": 16,
+                            "width": 3,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        }
+                    ]
+                },
+                "0x484": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x4002201C",
+                        "statusRegister": "0x40022020",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00000001"
+                    },
+                    "device": "STM32H5xx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xC3000000" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "RDP", "read": "0x40022050", "mask": "0xFF00", "value": "0x2E00" },
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xB4000000" }
+                            ] },
+                        { "number": "0x8", "checks": [
+                                { "kind": "RDP", "read": "0x50022050", "mask": "0xFF00", "value": "0x1700" },
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xB4000000" }
+                            ] },
+                        { "number": "0x5", "checks": [
+                                { "kind": "RDP", "read": "0x50022050", "mask": "0xFF00", "value": "0x0" },
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xB4000000" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "TZEN", "read": "0x40022070", "mask": "0xFF000000", "value": "0xB4000000" }
+                            ] },
+                        { "number": "0x6", "checks": [ ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "PRODUCT_STATE",
+                            "category": "Product state",
+                            "description": "Life state code.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xED", "text": "Open" }, { "value": "0x17", "text": "Provisioning, Debug partially opened (only non-secure)" }, { "value": "0x2E", "text": "iRoT-provisioned, Debug partially opened (only non-secure)" }, { "value": "0xC6", "text": "TZ-Closed, Debug partially opened (only non-secure)" }, { "value": "0x72", "text": "Closed, Debug disabled, regression is possible" }, { "value": "0x5C", "text": "Locked" }, { "value": "0x9A", "text": "Regression, The temporary state initiated by the debug authentication system in transition to Open" }, { "value": "0xA3", "text": "NS-Regression, The temporary state initiated by the debug authentication system in transition to TZ-Closed" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "Brownout level option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 0,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x1", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x2", "text": "BOR Level 2, the threshold level is medium (around 2.4 V)" }, { "value": "0x3", "text": "BOR Level 3, the threshold level is high (around 2.7 V)" } ]
+                        },
+                        {
+                            "name": "BORH_EN",
+                            "category": "BOR Level",
+                            "description": "Brownout high enable configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "disabled" }, { "value": "0x1", "text": "enabled" } ]
+                        },
+                        {
+                            "name": "IO_VDD_HSLV",
+                            "category": "User Configuration",
+                            "description": "VDD I/O high-speed at low-voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDD I/O below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "IO_VDDIO2_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDDIO2 voltage configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDD I/O below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "description": "Stop mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system Stop mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system Stop mode." } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "description": "Standby mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 21,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system standby mode" }, { "value": "0x1", "text": "Independent watchdog keep running in standby Stop mode." } ]
+                        },
+                        {
+                            "name": "BOOT_UBE",
+                            "category": "User Configuration",
+                            "description": "Unique boot entry control, selects either ST or OEM iRoT for secure boot.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 22,
+                            "width": 8,
+                            "values": [ { "value": "0xB4", "text": "OEM-iRoT (user flash) selected" }, { "value": "0xC3", "text": "ST-iRoT (system flash) selected" } ]
+                        },
+                        {
+                            "name": "SWAP_BANK",
+                            "category": "User Configuration",
+                            "description": "Bank swapping option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "bank 1 and bank 2 not swapped" }, { "value": "0x1", "text": "bank 1 and bank 2 swapped" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "description": "IWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "IWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "IWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "description": "WWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "WWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "WWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "description": "Core domain Stop entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Stop or Stop2 mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Stop or Stop2 mode on core domain" } ]
+                        },
+                        {
+                            "name": "NRST_STDBY",
+                            "category": "User Configuration",
+                            "description": "Core domain Standby entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x40022054",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Standby mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Standby mode on core domain" } ]
+                        },
+                        {
+                            "name": "TZEN",
+                            "category": "User Configuration 2",
+                            "description": "Trust Zone Enable configuration bits",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 24,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "Trust zone disabled" }, { "value": "0xB4", "text": "Trust zone enabled" } ]
+                        },
+                        {
+                            "name": "HUK_PUF",
+                            "category": "User Configuration 2",
+                            "description": "This bit configures the source and use of the unique key",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "The key is treated as HUK" }, { "value": "0x1", "text": "The key is treated as PUF" } ]
+                        },
+                        {
+                            "name": "USBPD_DIS",
+                            "category": "User Configuration 2",
+                            "description": "USB power delivery configuration option bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 8,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Enabled" }, { "value": "0x1", "text": "Disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM2 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 ECC check enabled" }, { "value": "0x1", "text": "SRAM2 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM3_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM3 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 5,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM3 ECC check enabled" }, { "value": "0x1", "text": "SRAM3 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "BKPRAM_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in BKPRAM region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BKPRAM ECC check enabled" }, { "value": "0x1", "text": "BKPRAM ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM2 Erase when system reset",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erase when system reset" }, { "value": "0x1", "text": "SRAM2 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "SRAM1_3_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM1 and SRAM3 erase upon system reset",
+                            "read": "0x40022070",
+                            "program": "0x40022074",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 and SRAM3 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM1 and SRAM3 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "NSBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Non secure unique boot entry address",
+                            "read": "0x40022080",
+                            "program": "0x40022084",
+                            "offset": 8,
+                            "width": 24,
+                            "equation": { "multiplier": "0x100", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NSBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of SWAP_BANK, and NSBOOTADD settings",
+                            "read": "0x40022080",
+                            "program": "0x40022084",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The NSBOOTADD is frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled)." } ]
+                        },
+                        {
+                            "name": "SECBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of UBE, SWAP_BANK, and SECBOOTADD settings.",
+                            "read": "0x40022088",
+                            "program": "0x4002208C",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The BOOT_UBE and SECBOOTADD are frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled)." } ]
+                        },
+                        {
+                            "name": "SECBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Unique Boot Entry Secure Adress.",
+                            "read": "0x40022088",
+                            "program": "0x4002208C",
+                            "offset": 8,
+                            "width": 24
+                        },
+                        {
+                            "name": "SECWM1_STRT",
+                            "category": "Bank1 - Flash watermark area definition",
+                            "description": "Bank 1 security WM area 1 start sector",
+                            "read": "0x400220E0",
+                            "program": "0x400220E4",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM1_END",
+                            "category": "Bank1 - Flash watermark area definition",
+                            "description": "Bank 1 security WM area 1 end sector",
+                            "read": "0x400220E0",
+                            "program": "0x400220E4",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn1",
+                            "category": "Write sector group protection 1",
+                            "description": "Bank 1 sector group protection option status byte",
+                            "read": "0x400220E8",
+                            "program": "0x400220EC",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM2_STRT",
+                            "category": "Bank2 - Flash watermark area definition",
+                            "description": "Bank 2 security WM area start sector",
+                            "read": "0x400221E0",
+                            "program": "0x400221E4",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM2_END",
+                            "category": "Bank2 - Flash watermark area definition",
+                            "description": "Bank 2 security WM area end sector",
+                            "read": "0x400221E0",
+                            "program": "0x400221E4",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn2",
+                            "category": "Write sector group protection 2",
+                            "description": "Bank 2 sector group protection option status byte",
+                            "read": "0x400221E8",
+                            "program": "0x400221EC",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "LOCKBL",
+                            "category": "OTP write protection",
+                            "description": "OTP Block Lock",
+                            "read": "0x40022090",
+                            "program": "0x40022094",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "EDATA1_EN",
+                            "category": "Flash data bank 1 sectors",
+                            "description": "Bank1 Flash high-cycle data enable",
+                            "read": "0x400220F0",
+                            "program": "0x400220F4",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "No Flash high-cycle data area" }, { "value": "0x1", "text": "Flash high-cycle data is used" } ]
+                        },
+                        {
+                            "name": "EDATA1_STRT",
+                            "category": "Flash data bank 1 sectors",
+                            "description": "EDATA1_STRT contains the start sectors of the Flash high-cycle data area in Bank1.",
+                            "read": "0x400220F0",
+                            "program": "0x400220F4",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "EDATA2_EN",
+                            "category": "Flash data bank 2 sectors",
+                            "description": "Bank2 Flash high-cycle data enable",
+                            "read": "0x400221F0",
+                            "program": "0x400221F4",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "No Flash high-cycle data area" }, { "value": "0x1", "text": "Flash high-cycle data is used" } ]
+                        },
+                        {
+                            "name": "EDATA2_STRT",
+                            "category": "Flash data bank 2 sectors",
+                            "description": "EDATA2_STRT contains the start sectors of the Flash high-cycle data area in Bank2.",
+                            "read": "0x400221F0",
+                            "program": "0x400221F4",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NS_EPOCH",
+                            "category": "Flash EPOCH",
+                            "description": "Non Volatile Non Secure EPOCH counter",
+                            "read": "0x40022060",
+                            "program": "0x40022064",
+                            "offset": 0,
+                            "width": 24,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "SEC_EPOCH",
+                            "category": "Flash EPOCH",
+                            "description": "Non Volatile Secure EPOCH counter",
+                            "read": "0x40022068",
+                            "program": "0x4002206C",
+                            "offset": 0,
+                            "width": 24,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_STRT",
+                            "category": "Flash HDP bank 1",
+                            "description": "HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x400220FC",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_END",
+                            "category": "Flash HDP bank 1",
+                            "description": "HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x400220FC",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_STRT",
+                            "category": "Flash HDP bank 2",
+                            "description": "HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x400221FC",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_END",
+                            "category": "Flash HDP bank 2",
+                            "description": "HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x400221FC",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "PRODUCT_STATE",
+                            "category": "Product state",
+                            "description": "Life state code.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xED", "text": "Open" }, { "value": "0x17", "text": "Provisioning, Debug partially opened (only non-secure)" }, { "value": "0x2E", "text": "iRoT-provisioned, Debug partially opened (only non-secure)" }, { "value": "0xC6", "text": "TZ-Closed, Debug partially opened (only non-secure)" }, { "value": "0x72", "text": "Closed, Debug disabled, regression is possible" }, { "value": "0x5C", "text": "Locked" }, { "value": "0x9A", "text": "Regression, The temporary state initiated by the debug authentication system in transition to Open" }, { "value": "0xA3", "text": "NS-Regression, The temporary state initiated by the debug authentication system in transition to TZ-Closed" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "Brownout level option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 0,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x1", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x2", "text": "BOR Level 2, the threshold level is medium (around 2.4 V)" }, { "value": "0x3", "text": "BOR Level 3, the threshold level is high (around 2.7 V)" } ]
+                        },
+                        {
+                            "name": "BORH_EN",
+                            "category": "BOR Level",
+                            "description": "Brownout high enable configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "disabled" }, { "value": "0x1", "text": "enabled" } ]
+                        },
+                        {
+                            "name": "IO_VDD_HSLV",
+                            "category": "User Configuration",
+                            "description": "VDD I/O high-speed at low-voltage status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDD I/O below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "IO_VDDIO2_HSLV",
+                            "category": "User Configuration",
+                            "description": "High-speed IO at low VDDIO2 voltage configuration bit",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "VDD I/O below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "description": "Stop mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system Stop mode" }, { "value": "0x1", "text": "Independent watchdog keep running in system Stop mode." } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "description": "Standby mode freeze option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 21,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in system standby mode" }, { "value": "0x1", "text": "Independent watchdog keep running in standby Stop mode." } ]
+                        },
+                        {
+                            "name": "BOOT_UBE",
+                            "category": "User Configuration",
+                            "description": "Unique boot entry control, selects either ST or OEM iRoT for secure boot.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 22,
+                            "width": 8,
+                            "values": [ { "value": "0xB4", "text": "OEM-iRoT (user flash) selected" }, { "value": "0xC3", "text": "ST-iRoT (system flash) selected" } ]
+                        },
+                        {
+                            "name": "SWAP_BANK",
+                            "category": "User Configuration",
+                            "description": "Bank swapping option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "bank 1 and bank 2 not swapped" }, { "value": "0x1", "text": "bank 1 and bank 2 swapped" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "description": "IWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "IWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "IWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "description": "WWDG control mode option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "WWDG watchdog is controlled by hardware" }, { "value": "0x1", "text": "WWDG watchdog is controlled by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration",
+                            "description": "Core domain Stop entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Stop or Stop2 mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Stop or Stop2 mode on core domain" } ]
+                        },
+                        {
+                            "name": "NRST_STDBY",
+                            "category": "User Configuration",
+                            "description": "Core domain Standby entry reset option status bit.",
+                            "read": "0x40022050",
+                            "program": "0x50022054",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "a reset is generated when entering Standby mode on core domain" }, { "value": "0x1", "text": "no reset generated when entering Standby mode on core domain" } ]
+                        },
+                        {
+                            "name": "TZEN",
+                            "category": "User Configuration 2",
+                            "description": "Trust Zone Enable configuration bits",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 24,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "Trust zone disabled" }, { "value": "0xB4", "text": "Trust zone enabled" } ]
+                        },
+                        {
+                            "name": "HUK_PUF",
+                            "category": "User Configuration 2",
+                            "description": "This bit configures the source and use of the unique key",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "The key is treated as HUK" }, { "value": "0x1", "text": "The key is treated as PUF" } ]
+                        },
+                        {
+                            "name": "USBPD_DIS",
+                            "category": "User Configuration 2",
+                            "description": "USB power delivery configuration option bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 8,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Enabled" }, { "value": "0x1", "text": "Disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM2 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 ECC check enabled" }, { "value": "0x1", "text": "SRAM2 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM3_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in SRAM3 region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 5,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM3 ECC check enabled" }, { "value": "0x1", "text": "SRAM3 ECC check disabled" } ]
+                        },
+                        {
+                            "name": "BKPRAM_ECC",
+                            "category": "User Configuration 2",
+                            "description": "ECC in BKPRAM region configuration bit",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BKPRAM ECC check enabled" }, { "value": "0x1", "text": "BKPRAM ECC check disabled" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM2 Erase when system reset",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 3,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erase when system reset" }, { "value": "0x1", "text": "SRAM2 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "SRAM1_3_RST",
+                            "category": "User Configuration 2",
+                            "description": "SRAM1 and SRAM3 erase upon system reset",
+                            "read": "0x40022070",
+                            "program": "0x50022074",
+                            "offset": 2,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM1 and SRAM3 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM1 and SRAM3 not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "NSBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Non secure unique boot entry address",
+                            "read": "0x40022080",
+                            "program": "0x50022084",
+                            "offset": 8,
+                            "width": 24,
+                            "equation": { "multiplier": "0x100", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NSBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of SWAP_BANK, and NSBOOTADD settings",
+                            "read": "0x40022080",
+                            "program": "0x50022084",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The NSBOOTADD is frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled)." } ]
+                        },
+                        {
+                            "name": "SECBOOT_LOCK",
+                            "category": "Boot Configuration",
+                            "description": "A field locking the values of UBE, SWAP_BANK, and SECBOOTADD settings.",
+                            "read": "0x40022088",
+                            "program": "0x5002208C",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xC3", "text": "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules." }, { "value": "0xB4", "text": "The BOOT_UBE and SECBOOTADD are frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled)." } ]
+                        },
+                        {
+                            "name": "SECBOOTADD",
+                            "category": "Boot Configuration",
+                            "description": "Unique Boot Entry Secure Adress.",
+                            "read": "0x40022088",
+                            "program": "0x5002208C",
+                            "offset": 8,
+                            "width": 24,
+                            "equation": { "multiplier": "0x100", "offset": "0x0" }
+                        },
+                        {
+                            "name": "SECWM1_STRT",
+                            "category": "Bank1 - Flash watermark area definition",
+                            "description": "Bank 1 security WM area 1 start sector",
+                            "read": "0x400220E0",
+                            "program": "0x500220E4",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM1_END",
+                            "category": "Bank1 - Flash watermark area definition",
+                            "description": "Bank 1 security WM area 1 end sector",
+                            "read": "0x400220E0",
+                            "program": "0x500220E4",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn1",
+                            "category": "Write sector group protection 1",
+                            "description": "Bank 1 sector group protection option status byte",
+                            "read": "0x400220E8",
+                            "program": "0x500220EC",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM2_STRT",
+                            "category": "Bank2 - Flash watermark area definition",
+                            "description": "Bank 2 security WM area start sector",
+                            "read": "0x400221E0",
+                            "program": "0x500221E4",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "SECWM2_END",
+                            "category": "Bank2 - Flash watermark area definition",
+                            "description": "Bank 2 security WM area end sector",
+                            "read": "0x400221E0",
+                            "program": "0x500221E4",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRPSGn2",
+                            "category": "Write sector group protection 2",
+                            "description": "Bank 2 sector group protection option status byte",
+                            "read": "0x400221E8",
+                            "program": "0x500221EC",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "LOCKBL",
+                            "category": "OTP write protection",
+                            "description": "OTP Block Lock",
+                            "read": "0x40022090",
+                            "program": "0x50022094",
+                            "offset": 0,
+                            "width": 32,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "EDATA1_EN",
+                            "category": "Flash data bank 1 sectors",
+                            "description": "Bank1 Flash high-cycle data enable",
+                            "read": "0x400220F0",
+                            "program": "0x500220F4",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "No Flash high-cycle data area" }, { "value": "0x1", "text": "Flash high-cycle data is used" } ]
+                        },
+                        {
+                            "name": "EDATA1_STRT",
+                            "category": "Flash data bank 1 sectors",
+                            "description": "EDATA1_STRT contains the start sectors of the Flash high-cycle data area in Bank1.",
+                            "read": "0x400220F0",
+                            "program": "0x500220F4",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "EDATA2_EN",
+                            "category": "Flash data bank 2 sectors",
+                            "description": "Bank2 Flash high-cycle data enable",
+                            "read": "0x400221F0",
+                            "program": "0x500221F4",
+                            "offset": 15,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "No Flash high-cycle data area" }, { "value": "0x1", "text": "Flash high-cycle data is used" } ]
+                        },
+                        {
+                            "name": "EDATA2_STRT",
+                            "category": "Flash data bank 2 sectors",
+                            "description": "EDATA2_STRT contains the start sectors of the Flash high-cycle data area in Bank2.",
+                            "read": "0x400221F0",
+                            "program": "0x500221F4",
+                            "offset": 0,
+                            "width": 3,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "NS_EPOCH",
+                            "category": "Flash EPOCH",
+                            "description": "Non Volatile Non Secure EPOCH counter",
+                            "read": "0x40022060",
+                            "program": "0x50022064",
+                            "offset": 0,
+                            "width": 24,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "SEC_EPOCH",
+                            "category": "Flash EPOCH",
+                            "description": "Non Volatile Secure EPOCH counter",
+                            "read": "0x40022068",
+                            "program": "0x5002206C",
+                            "offset": 0,
+                            "width": 24,
+                            "equation": { "multiplier": "0x1", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_STRT",
+                            "category": "Flash HDP bank 1",
+                            "description": "HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x500220FC",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP1_END",
+                            "category": "Flash HDP bank 1",
+                            "description": "HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400220F8",
+                            "program": "0x500220FC",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_STRT",
+                            "category": "Flash HDP bank 2",
+                            "description": "HDP barrier start set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x500221FC",
+                            "offset": 0,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "HDP2_END",
+                            "category": "Flash HDP bank 2",
+                            "description": "HDP barrier end set in number of 8kb sectors",
+                            "read": "0x400221F8",
+                            "program": "0x500221FC",
+                            "offset": 16,
+                            "width": 7,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "configurePresets": [
         {
             "name": "STM32H503xB",
