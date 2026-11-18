@@ -5,6 +5,506 @@
         "minor": 25,
         "patch": 0
     },
+    "vendor": {
+        "embedbits.com/EmBi": {
+            "optionBytes": {
+                "0x452": {
+                    "procedure": {
+                        "optionKeyRegister": "0x40023C08",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x40023C14",
+                        "statusRegister": "0x40023C0C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32F72x/STM32F73x",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF07A22", "mask": "0x40", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF07A22", "mask": "0x40", "value": "0x40" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 3 (VBOR3), brownout threshold level 3" }, { "value": "0x1", "text": "BOR Level 2 (VBOR2), brownout threshold level 2" }, { "value": "0x2", "text": "BOR Level 1 (VBOR1), brownout threshold level 1" }, { "value": "0x3", "text": "BOR off, POR/PDR reset threshold level is applied" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 30,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 5,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "User Configuration",
+                            "read": "0x40023C1C",
+                            "program": "0x40023C1C",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "BOOT_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=0",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=1",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 4,
+                            "configs": [ "0x1" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "PCROP0",
+                            "category": "Read/Write Protection",
+                            "read": "0x40023C1C",
+                            "program": "0x40023C1C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "PCROP protection not active on this sector" }, { "value": "0x1", "text": "PCROP protection active on this sector" } ]
+                        },
+                        {
+                            "name": "PCROP0",
+                            "category": "Read/Write Protection",
+                            "read": "0x40023C1C",
+                            "program": "0x40023C1C",
+                            "offset": 0,
+                            "width": 4,
+                            "configs": [ "0x1" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "PCROP protection not active on this sector" }, { "value": "0x1", "text": "PCROP protection active on this sector" } ]
+                        }
+                    ]
+                },
+                "0x449": {
+                    "procedure": {
+                        "optionKeyRegister": "0x40023C08",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x40023C14",
+                        "statusRegister": "0x40023C0C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32F74x/STM32F75x",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF0F442", "mask": "0xFFFFFFFF", "value": "0xFFFFFFFF" }
+                            ] },
+                        { "number": "0x0", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF0F442", "mask": "0xFFFFFFFF", "value": "0xFFFFFFFF" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "RomLess", "read": "0x1FF0F442", "mask": "0x40", "value": "0x40" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 3 (VBOR3), brownout threshold level 3" }, { "value": "0x1", "text": "BOR Level 2 (VBOR2), brownout threshold level 2" }, { "value": "0x2", "text": "BOR Level 1 (VBOR1), brownout threshold level 1" }, { "value": "0x3", "text": "BOR off, POR/PDR reset threshold level is applied" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 30,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 5,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "BOOT_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=0",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=1",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 2,
+                            "configs": [ "0x1" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        }
+                    ]
+                },
+                "0x451": {
+                    "procedure": {
+                        "optionKeyRegister": "0x40023C08",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x40023C14",
+                        "statusRegister": "0x40023C0C",
+                        "optionLockMask": "0x00000001",
+                        "startMask": "0x00000002",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32F76x/STM32F77x",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x20000000", "value": "0x20000000" },
+                                { "kind": "FlashSize", "read": "0x1FF0F442", "mask": "0xFFFF", "value": "0x800" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x20000000", "value": "0x0" },
+                                { "kind": "FlashSize", "read": "0x1FF0F442", "mask": "0xFFFF", "value": "0x800" }
+                            ] },
+                        { "number": "0x2", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x20000000", "value": "0x20000000" },
+                                { "kind": "FlashSize", "read": "0x1FF0F442", "mask": "0xFFFF", "value": "0x400" }
+                            ] },
+                        { "number": "0x3", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x20000000", "value": "0x0" },
+                                { "kind": "FlashSize", "read": "0x1FF0F442", "mask": "0xFFFF", "value": "0x400" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x20000000", "value": "0x0" }
+                            ] },
+                        { "number": "0x5", "checks": [
+                                { "kind": "DualBank", "read": "0x40023C14", "mask": "0x0", "value": "0x0" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 8,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR Level 3 (VBOR3), brownout threshold level 3" }, { "value": "0x1", "text": "BOR Level 2 (VBOR2), brownout threshold level 2" }, { "value": "0x2", "text": "BOR Level 1 (VBOR1), brownout threshold level 1" }, { "value": "0x3", "text": "BOR off, POR/PDR reset threshold level is applied" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 30,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "nDBANK",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 29,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Flash in dual bank with 128 bits read access" }, { "value": "0x1", "text": "Flash in single bank with 256 bits read access" } ]
+                        },
+                        {
+                            "name": "nDBOOT",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 28,
+                            "width": 1,
+                            "configs": [ "0x1", "0x4" ],
+                            "values": [ { "value": "0x0", "text": "Dual Boot enabled" }, { "value": "0x1", "text": "Dual Boot disabled" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 5,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated" } ]
+                        },
+                        {
+                            "name": "BOOT_ADD0",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=0",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "BOOT_ADD1",
+                            "category": "Boot address Option Bytes",
+                            "description": "Define the boot address when BOOT0=1",
+                            "read": "0x40023C18",
+                            "program": "0x40023C18",
+                            "offset": 16,
+                            "width": 16,
+                            "equation": { "multiplier": "0x4000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 12,
+                            "configs": [ "0x0", "0x2", "0x5" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on this sector" }, { "value": "0x1", "text": "Write protection not active on this sector" } ]
+                        },
+                        {
+                            "name": "nWRP0",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 16,
+                            "width": 6,
+                            "configs": [ "0x1", "0x3", "0x4" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on bank1 sector 2i and 2i+1" }, { "value": "0x1", "text": "Write protection not active on bank1 sector 2i, 2i+1" } ]
+                        },
+                        {
+                            "name": "nWRP6",
+                            "category": "Write Protection",
+                            "read": "0x40023C14",
+                            "program": "0x40023C14",
+                            "offset": 22,
+                            "width": 6,
+                            "configs": [ "0x1", "0x3", "0x4" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active on bank2 sector 2i and 2i+1" }, { "value": "0x1", "text": "Write protection not active on bank2 sector 2i, 2i+1" } ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "configurePresets": [
         {
             "name": "STM32F722xC",
@@ -24,7 +524,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 256
+                        "flashSizeKB": 256,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -47,7 +548,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -70,7 +572,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 256
+                        "flashSizeKB": 256,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -93,7 +596,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -116,7 +620,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 64
+                        "flashSizeKB": 64,
+                        "optionByteConfigs": [ "0x1" ]
                     }
                 }
             }
@@ -139,7 +644,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -162,7 +668,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x452",
                         "flashSizeAddress": "0x1FF07A22",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -277,7 +784,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x449",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 64
+                        "flashSizeKB": 64,
+                        "optionByteConfigs": [ "0x1" ]
                     }
                 }
             }
@@ -323,7 +831,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5" ]
                     }
                 }
             }
@@ -346,7 +855,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0x4", "0x5" ]
                     }
                 }
             }
@@ -369,7 +879,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5" ]
                     }
                 }
             }
@@ -392,7 +903,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0x4", "0x5" ]
                     }
                 }
             }
@@ -415,7 +927,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5" ]
                     }
                 }
             }
@@ -438,7 +951,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0x4", "0x5" ]
                     }
                 }
             }
@@ -461,7 +975,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0x4", "0x5" ]
                     }
                 }
             }
@@ -484,7 +999,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x451",
                         "flashSizeAddress": "0x1FF0F442",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0x4", "0x5" ]
                     }
                 }
             }
