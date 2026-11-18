@@ -5,6 +5,207 @@
         "minor": 25,
         "patch": 0
     },
+    "vendor": {
+        "embedbits.com/EmBi": {
+            "optionBytes": {
+                "0x485": {
+                    "procedure": {
+                        "optionKeyRegister": "0x52002100",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "controlRegister": "0x52002104",
+                        "statusRegister": "0x52002014",
+                        "optionLockMask": "0x00000001",
+                        "programMask": "0x00000002",
+                        "busyMask": "0x00000004"
+                    },
+                    "device": "STM32H7Rxx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "SecurityEx", "write": "0x580244F4", "value": "0x2" },
+                                { "kind": "SecurityEx", "read": "0x58000528", "mask": "0x1", "value": "0x1" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "NVSTATE",
+                            "category": "Flash Non Volatile State",
+                            "description": "FLASH security status register programming.",
+                            "read": "0x52002200",
+                            "program": "0x52002204",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xB4", "text": "OPEN device" }, { "value": "0x51", "text": "CLOSED device" } ]
+                        },
+                        {
+                            "name": "IROT_SELECT",
+                            "category": "FLASH ROT programming",
+                            "description": "iRoT selection",
+                            "read": "0x52002208",
+                            "program": "0x5200220C",
+                            "offset": 24,
+                            "width": 8
+                        },
+                        {
+                            "name": "OTPL",
+                            "category": "OTP write protection",
+                            "description": "OTP Lock",
+                            "read": "0x52002210",
+                            "program": "0x52002214",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x2000", "offset": "0x0" }
+                        },
+                        {
+                            "name": "WRPS",
+                            "category": "Write Protection",
+                            "read": "0x52002218",
+                            "program": "0x5200221C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x1" ],
+                            "byBit": true,
+                            "values": [ { "value": "0x0", "text": "Write protection active" }, { "value": "0x1", "text": "Write protection not active" } ]
+                        },
+                        {
+                            "name": "HDP_AREA_START",
+                            "category": "Flash HDP bank",
+                            "description": "This option sets the start address that contains the last 256-byte block of the hide protection (HDP) area in user Flash area.",
+                            "read": "0x52002230",
+                            "program": "0x52002234",
+                            "offset": 0,
+                            "width": 9,
+                            "equation": { "multiplier": "0x2000", "offset": "0x1" }
+                        },
+                        {
+                            "name": "HDP_AREA_END",
+                            "category": "Flash HDP bank",
+                            "description": "This option sets the end address that contains the first 256-byte block of the hide protection (HDP) area in user Flash area.",
+                            "read": "0x52002230",
+                            "program": "0x52002234",
+                            "offset": 16,
+                            "width": 9,
+                            "equation": { "multiplier": "0x2000", "offset": "0x1" }
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits reflects the power level that generates a system reset.",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 2,
+                            "width": 2,
+                            "values": [ { "value": "0x0", "text": "BOR OFF, POR/PDR reset threshold level is applied" }, { "value": "0x1", "text": "BOR Level 1, the threshold level is low (around 2.1 V)" }, { "value": "0x2", "text": "BOR Level 2, the threshold level is medium (around 2.4 V)" }, { "value": "0x3", "text": "BOR Level 3, the threshold level is high (around 2.7 V)" } ]
+                        },
+                        {
+                            "name": "IWDG_HW",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 4,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "IWDG watchdog is controller by hardware" }, { "value": "0x1", "text": "IWDG watchdog is controller by software" } ]
+                        },
+                        {
+                            "name": "NRST_STOP",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 6,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent WDG generates a reset if STOP mode is requested" }, { "value": "0x1", "text": "Independent WDG does not generate a reset if STOP mode is requested" } ]
+                        },
+                        {
+                            "name": "NRST_STBY",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 7,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent WDG generates a reset if STANDBY mode is requested" }, { "value": "0x1", "text": "Independent WDG does not generate a reset if STANDBY mode is requested" } ]
+                        },
+                        {
+                            "name": "XSPI1_HSLV",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 8,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "I/O XSPIM_P1 High-Speed option disabled" }, { "value": "0x1", "text": "I/O XSPIM_P1 High-Speed option enabled" } ]
+                        },
+                        {
+                            "name": "XSPI2_HSLV",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 9,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "I/O XSPIM_P2 High-Speed option disabled" }, { "value": "0x1", "text": "I/O XSPIM_P2 High-Speed option enabled" } ]
+                        },
+                        {
+                            "name": "IWDG_FZ_STOP",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in Stop mode" }, { "value": "0x1", "text": "Independent watchdog keep running in Stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_FZ_SDBY",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Independent watchdog frozen in Standby mode" }, { "value": "0x1", "text": "Independent watchdog keep running in Standby mode" } ]
+                        },
+                        {
+                            "name": "VDDIO_HSLV",
+                            "category": "User Configuration1",
+                            "read": "0x52002260",
+                            "program": "0x52002264",
+                            "offset": 29,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Product working in the full voltage range, I/O speed optimization at low-voltage disabled" }, { "value": "0x1", "text": "Product operating below 2.5 V, I/O speed optimization at low-voltage feature allowed" } ]
+                        },
+                        {
+                            "name": "ITCM_AXI_SHARE",
+                            "category": "ITCM RAM Protection",
+                            "read": "0x52002268",
+                            "program": "0x5200226C",
+                            "offset": 0,
+                            "width": 3,
+                            "configs": [ "0x0" ],
+                            "values": [ { "value": "0x0", "text": "ITCM 64 Kbytes" }, { "value": "0x1", "text": "ITCM 128 Kbytes" }, { "value": "0x2", "text": "ITCM 192 Kbytes" }, { "value": "0x3", "text": "ITCM 64 Kbytes" } ]
+                        },
+                        {
+                            "name": "DTCM_AXI_SHARE",
+                            "category": "DTCM RAM Protection",
+                            "read": "0x52002268",
+                            "program": "0x5200226C",
+                            "offset": 4,
+                            "width": 3,
+                            "configs": [ "0x0" ],
+                            "values": [ { "value": "0x0", "text": "DTCM 64 Kbytes" }, { "value": "0x1", "text": "DTCM 128 Kbytes" }, { "value": "0x2", "text": "DTCM 192 Kbytes" }, { "value": "0x3", "text": "DTCM 64 Kbytes" } ]
+                        },
+                        {
+                            "name": "ECC_ON_SRAM",
+                            "category": "User Configuration 2",
+                            "read": "0x52002268",
+                            "program": "0x5200226C",
+                            "offset": 8,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "ECC_ON_SRAM disabled" }, { "value": "0x1", "text": "ECC_ON_SRAM enabled" } ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "configurePresets": [
         {
             "name": "STM32H7R3x8",
