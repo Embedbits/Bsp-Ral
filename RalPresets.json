@@ -5,6 +5,2791 @@
         "minor": 25,
         "patch": 0
     },
+    "vendor": {
+        "embedbits.com/EmBi": {
+            "optionBytes": {
+                "0x464": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L41x",
+                    "configs": [ ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "description": "This bit selects the boot mode only when BOOT0=1. If BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from embedded SRAM1 when BOOT0=1" }, { "value": "0x1", "text": "Boot from system memory when BOOT0=1" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 6,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 6,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 6,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 6,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        }
+                    ]
+                },
+                "0x435": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L43xxx/STM32L44xxx",
+                    "configs": [ ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "description": "This bit selects the boot mode only when BOOT0=1. If BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from embedded SRAM1 when BOOT0=1" }, { "value": "0x1", "text": "Boot from system memory when BOOT0=1" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        }
+                    ]
+                },
+                "0x462": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L45x/L46x",
+                    "configs": [ ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "description": "This bit selects the boot mode only when BOOT0=1. If BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from embedded SRAM1 when BOOT0=1" }, { "value": "0x1", "text": "Boot from system memory when BOOT0=1" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        }
+                    ]
+                },
+                "0x415": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L4x1/STM32L475xx/STM32L476xx/STM32L486xx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "FlashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "DualBank", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "FlashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" }
+                            ] },
+                        { "number": "0x2", "checks": [
+                                { "kind": "DualBank", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "FlashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" }
+                            ] },
+                        { "number": "0x3", "checks": [
+                                { "kind": "DualBank", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "FlashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x100" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "DualBank", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "FlashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x100" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "BFB2",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Dual-bank boot disable" }, { "value": "0x1", "text": "Dual-bank boot enable" } ]
+                        },
+                        {
+                            "name": "DualBank",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x1", "0x2", "0x3", "0x4" ],
+                            "values": [ { "value": "0x0", "text": "256 KB/512 KB Single-bank Flash: Contiguous addresses in Bank 1" }, { "value": "0x1", "text": "256 KB/512 KB Dual-bank Flash" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from Flash if BOOT0 = 0, otherwise Embedded SRAM1" }, { "value": "0x1", "text": "Boot from Flash if BOOT0 = 0, otherwise system memory" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection (Bank 1)",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        }
+                    ]
+                },
+                "0x461": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L496xx/STM32L4A6xx",
+                    "configs": [ ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "BFB2",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Dual-bank boot disable" }, { "value": "0x1", "text": "Dual-bank boot enable" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from Flash if BOOT0 = 0, otherwise Embedded SRAM1" }, { "value": "0x1", "text": "Boot from Flash if BOOT0 = 0, otherwise system memory" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection (Bank 1)",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 16,
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "equation": { "multiplier": "0x800", "offset": "0x8080000" }
+                        }
+                    ]
+                },
+                "0x471": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L4Pxxx/STM32L4Qxxx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x800" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x800" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x2", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x3", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x5", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x6", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x7", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x8", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x9", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x200" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0xA", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF0000", "mask": "0xFFFFFFFF", "value": "0xFFFFFFFF" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "BFB2",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Dual-bank boot disable" }, { "value": "0x1", "text": "Dual-bank boot enable" } ]
+                        },
+                        {
+                            "name": "DB1M",
+                            "category": "User Configuration",
+                            "description": "Dual-Bank on 1 MB Flash or 512 KB Flash memory devices",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x2", "0x3", "0x4", "0x5", "0x6", "0x7", "0x8", "0x9", "0xA" ],
+                            "values": [ { "value": "0x0", "text": "1 MB or 512 Kb single Flash: contiguous address in bank1" }, { "value": "0x1", "text": "1 MB or 512 Kb dual-bank Flash with contiguous addresses. When DB1M is set, a hard Fault is generated when the requested address goes over 1 MB or 512 Kb." } ]
+                        },
+                        {
+                            "name": "DBANK",
+                            "category": "User Configuration",
+                            "description": "This bit can only be written when PCROPA/B is disabled",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 22,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Single bank mode with 128 bits data read width" }, { "value": "0x1", "text": "Dual bank mode with 64 bits data" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "description": "This bit selects the boot mode only when BOOT0=1. If BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from embedded SRAM1 when BOOT0=1" }, { "value": "0x1", "text": "Boot from system memory when BOOT0=1" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "description": "SRAM2 parity check enable",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "description": "SRAM2 Erase when system reset",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "description": "Software BOOT0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x11", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x10", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection (Bank 1)",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x10", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x10", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        }
+                    ]
+                },
+                "0x470": {
+                    "procedure": {
+                        "optionKeyRegister": "0x4002200C",
+                        "optionKeys": [ "0x08192A3B", "0x4C5D6E7F" ],
+                        "flashKeyRegister": "0x40022008",
+                        "flashKeys": [ "0x45670123", "0xCDEF89AB" ],
+                        "controlRegister": "0x40022014",
+                        "statusRegister": "0x40022010",
+                        "optionLockMask": "0x40000000",
+                        "flashLockMask": "0x80000000",
+                        "startMask": "0x00020000",
+                        "launchMask": "0x08000000",
+                        "busyMask": "0x00010000"
+                    },
+                    "device": "STM32L4Rxxx/STM32L4Sxxx",
+                    "configs": [
+                        { "number": "0x0", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x800" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x1", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x800" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x2", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x3", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x4", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x5", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x6", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0x7", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x0" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x8", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x400000" }
+                            ] },
+                        { "number": "0x9", "checks": [
+                                { "kind": "flashSize", "read": "0x1FFF75E0", "mask": "0xFFFF", "value": "0x400" },
+                                { "kind": "DB1M", "read": "0x40022020", "mask": "0x200000", "value": "0x200000" },
+                                { "kind": "DBANK", "read": "0x40022020", "mask": "0x400000", "value": "0x0" }
+                            ] },
+                        { "number": "0xA", "checks": [
+                                { "kind": "dummy", "read": "0x20000000", "mask": "0x0", "value": "0x0" }
+                            ] }
+                    ],
+                    "items": [
+                        {
+                            "name": "RDP",
+                            "category": "Read Out Protection",
+                            "description": "Read protection option byte. The read protection is used to protect the software code stored in Flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 0,
+                            "width": 8,
+                            "values": [ { "value": "0xAA", "text": "Level 0, no protection" }, { "value": "0xBB", "text": "or any value other than 0xAA and 0xCC: Level 1, read protection" }, { "value": "0xCC", "text": "Level 2, chip protection" } ]
+                        },
+                        {
+                            "name": "BOR_LEV",
+                            "category": "BOR Level",
+                            "description": "These bits contain the supply level threshold that activates/releases the reset. They can be written to program a new BOR level value into Flash memory",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 8,
+                            "width": 3,
+                            "values": [ { "value": "0x0", "text": "BOR Level 0, reset level threshold is around 1.7 V" }, { "value": "0x1", "text": "BOR Level 1, reset level threshold is around 2.0 V" }, { "value": "0x2", "text": "BOR Level 2, reset level threshold is around 2.2 V" }, { "value": "0x3", "text": "BOR Level 3, reset level threshold is around 2.5 V" }, { "value": "0x4", "text": "BOR Level 4, reset level threshold is around 2.8 V" } ]
+                        },
+                        {
+                            "name": "nRST_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 12,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Stop mode" }, { "value": "0x1", "text": "No reset generated when entering Stop mode" } ]
+                        },
+                        {
+                            "name": "nRST_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 13,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering Standby mode" }, { "value": "0x1", "text": "No reset generated when entering Standby mode" } ]
+                        },
+                        {
+                            "name": "nRST_SHDW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 14,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Reset generated when entering the Shutdown mode" }, { "value": "0x1", "text": "No reset generated when entering the Shutdown mode" } ]
+                        },
+                        {
+                            "name": "IWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 16,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware independant watchdog" }, { "value": "0x1", "text": "Software independant watchdog" } ]
+                        },
+                        {
+                            "name": "IWDG_STOP",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 17,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in stop mode" }, { "value": "0x1", "text": "IWDG counter active in stop mode" } ]
+                        },
+                        {
+                            "name": "IWDG_STDBY",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 18,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Freeze IWDG counter in standby mode" }, { "value": "0x1", "text": "IWDG counter active in standby mode" } ]
+                        },
+                        {
+                            "name": "WWDG_SW",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 19,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Hardware window watchdog" }, { "value": "0x1", "text": "Software window watchdog" } ]
+                        },
+                        {
+                            "name": "BFB2",
+                            "category": "User Configuration",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 20,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Dual-bank boot disable" }, { "value": "0x1", "text": "Dual-bank boot enable" } ]
+                        },
+                        {
+                            "name": "DB1M",
+                            "category": "User Configuration",
+                            "description": "Dual-Bank on 1 MB Flash or 512 KB Flash memory devices",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 21,
+                            "width": 1,
+                            "configs": [ "0x2", "0x3", "0x4", "0x5", "0x6", "0x7", "0x8", "0x9", "0xA" ],
+                            "values": [ { "value": "0x0", "text": "1 MB or 512 Kb single Flash: contiguous address in bank1" }, { "value": "0x1", "text": "1 MB or 512 Kb dual-bank Flash with contiguous addresses. When DB1M is set, a hard Fault is generated when the requested address goes over 1 MB or 512 Kb." } ]
+                        },
+                        {
+                            "name": "DBANK",
+                            "category": "User Configuration",
+                            "description": "This bit can only be written when PCROPA/B is disabled",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 22,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Single bank mode with 128 bits data read width" }, { "value": "0x1", "text": "Dual bank mode with 64 bits data" } ]
+                        },
+                        {
+                            "name": "nBOOT1",
+                            "category": "User Configuration",
+                            "description": "This bit selects the boot mode only when BOOT0=1. If BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory.",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 23,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "Boot from embedded SRAM1 when BOOT0=1" }, { "value": "0x1", "text": "Boot from system memory when BOOT0=1" } ]
+                        },
+                        {
+                            "name": "SRAM2_PE",
+                            "category": "User Configuration",
+                            "description": "SRAM2 parity check enable",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 24,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 parity check enable" }, { "value": "0x1", "text": "SRAM2 parity check disable" } ]
+                        },
+                        {
+                            "name": "SRAM2_RST",
+                            "category": "User Configuration",
+                            "description": "SRAM2 Erase when system reset",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 25,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "SRAM2 erased when a system reset occurs" }, { "value": "0x1", "text": "SRAM2 is not erased when a system reset occurs" } ]
+                        },
+                        {
+                            "name": "nSWBOOT0",
+                            "category": "User Configuration",
+                            "description": "Software BOOT0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 26,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 taken from the option bit nBOOT0" }, { "value": "0x1", "text": "BOOT0 taken from PH3/BOOT0 pin" } ]
+                        },
+                        {
+                            "name": "nBOOT0",
+                            "category": "User Configuration",
+                            "description": "This option bit sets the BOOT0 value only when nSWBOOT0=0",
+                            "read": "0x40022020",
+                            "program": "0x40022020",
+                            "offset": 27,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "BOOT0 = 1, boot memory depends on nBOOT1 value" }, { "value": "0x1", "text": "BOOT0 = 0, boot from system memory when nSWBOOT0=1 and main flash is empty,otherwise, boot from main flash memory" } ]
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_STRT",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP start address",
+                            "read": "0x40022024",
+                            "program": "0x40022024",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP1_END",
+                            "category": "PCROP Protection (Bank 1)",
+                            "description": "Flash Bank 1 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP_RDP",
+                            "category": "PCROP Protection (Bank 1)",
+                            "read": "0x40022028",
+                            "program": "0x40022028",
+                            "offset": 31,
+                            "width": 1,
+                            "values": [ { "value": "0x0", "text": "PCROP zone is kept when RDP is decreased" }, { "value": "0x1", "text": "PCROP zone is erased when RDP is decreased" } ]
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1A_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP first area",
+                            "read": "0x4002202C",
+                            "program": "0x4002202C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the first page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_STRT",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0x2", "0x3", "0x6", "0x9", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "WRP1B_END",
+                            "category": "Write Protection (Bank 1)",
+                            "description": "The address of the last page of the Bank 1 WRP second area",
+                            "read": "0x40022030",
+                            "program": "0x40022030",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1", "0x4", "0x5", "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8000000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_STRT",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP start address",
+                            "read": "0x40022044",
+                            "program": "0x40022044",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x16", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "PCROP2_END",
+                            "category": "PCROP Protection (Bank 2)",
+                            "description": "Flash Bank 2 PCROP End address. Deactivation of PCROP can be done by enabling PCROP_RDP and changing RDP from level 1 to level 0",
+                            "read": "0x40022048",
+                            "program": "0x40022048",
+                            "offset": 0,
+                            "width": 17,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x8", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2A_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP first area",
+                            "read": "0x4002204C",
+                            "program": "0x4002204C",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_STRT",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of first page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 0,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x0", "0xA" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x2", "0x3" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x6", "0x9" ],
+                            "equation": { "multiplier": "0x2000", "offset": "0x8040000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x1" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8100000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x4", "0x5" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8080000" }
+                        },
+                        {
+                            "name": "WRP2B_END",
+                            "category": "Write Protection (Bank 2)",
+                            "description": "The address of last page of the Bank 2 WRP second area",
+                            "read": "0x40022050",
+                            "program": "0x40022050",
+                            "offset": 16,
+                            "width": 8,
+                            "configs": [ "0x7", "0x8" ],
+                            "equation": { "multiplier": "0x1000", "offset": "0x8040000" }
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "configurePresets": [
         {
             "name": "STM32L412x8",
@@ -392,7 +3177,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x1", "0x2" ]
                     }
                 }
             }
@@ -415,7 +3201,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -438,7 +3225,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 256
+                        "flashSizeKB": 256,
+                        "optionByteConfigs": [ "0x3", "0x4" ]
                     }
                 }
             }
@@ -461,7 +3249,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x1", "0x2" ]
                     }
                 }
             }
@@ -484,7 +3273,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -507,7 +3297,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 256
+                        "flashSizeKB": 256,
+                        "optionByteConfigs": [ "0x3", "0x4" ]
                     }
                 }
             }
@@ -530,7 +3321,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x1", "0x2" ]
                     }
                 }
             }
@@ -553,7 +3345,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -576,7 +3369,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x415",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x0" ]
                     }
                 }
             }
@@ -668,7 +3462,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x471",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 512
+                        "flashSizeKB": 512,
+                        "optionByteConfigs": [ "0x6", "0x7", "0x8", "0x9", "0xA" ]
                     }
                 }
             }
@@ -691,7 +3486,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x471",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5", "0xA" ]
                     }
                 }
             }
@@ -714,7 +3510,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x471",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5", "0xA" ]
                     }
                 }
             }
@@ -737,7 +3534,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5", "0x6", "0x7", "0x8", "0x9", "0xA" ]
                     }
                 }
             }
@@ -760,7 +3558,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
@@ -783,7 +3582,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
@@ -806,7 +3606,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 1024
+                        "flashSizeKB": 1024,
+                        "optionByteConfigs": [ "0x2", "0x3", "0x4", "0x5", "0x6", "0x7", "0x8", "0x9", "0xA" ]
                     }
                 }
             }
@@ -829,7 +3630,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
@@ -852,7 +3654,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
@@ -875,7 +3678,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
@@ -898,7 +3702,8 @@
                         "idMask": "0x00000FFF",
                         "idValue": "0x470",
                         "flashSizeAddress": "0x1FFF75E0",
-                        "flashSizeKB": 2048
+                        "flashSizeKB": 2048,
+                        "optionByteConfigs": [ "0x0", "0x1", "0xA" ]
                     }
                 }
             }
