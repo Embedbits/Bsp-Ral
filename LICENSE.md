@@ -20,6 +20,10 @@ They include (but are not limited to):
 - /CMSIS_ST/
 - /RAL_ST/Stm32_Drv/
 
+The option bytes of `RalPresets.json` (vendor data `optionBytes`: option bytes, their values and the device
+variants) are derived from the STM32CubeProgrammer database of STMicroelectronics and are governed by the ST
+Software License Agreement SLA0048 (copyright STMicroelectronics, the conditions of SLA0048 apply to this part).
+
 ## 3. ARM CMSIS Components
 
 The /CMSIS/ directory contains software distributed by ARM Ltd. under Apache 2.0 or equivalent open-source license.
@@ -31,6 +35,7 @@ The /CMSIS/ directory contains software distributed by ARM Ltd. under Apache 2.0
 | CMSIS       | ARM Ltd.            | Apache 2.0                    |
 | CMSIS_ST    | STMicroelectronics  | ST Software License Agreement |
 | RAL_ST      | ST + Original Work  | ST License + CC BY-NC         |
+| RalPresets.json option bytes | STMicroelectronics (STM32CubeProgrammer database) | ST Software License Agreement (SLA0048) |
 | Port layer  | Original Work       | CC BY-NC 4.0                  |
 
 © 2025 – Embedded Abstraction Project
